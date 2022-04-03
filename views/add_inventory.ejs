@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendataan Bahan Bangunan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css" integrity="sha512-aqT9YD5gLuLBr6ipQAS+72o5yHKzgZbGxEh6iY8lW/r6gG14e2kBTAJb8XrxzZrMOgSmDqtLaF76T0Z6YY2IHg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/datatables.min.css"/>
+   
+
+
+  </head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" class="navbar-brand"><i class="fas fa-code me-2"></i>Admin</a>
+            <button class="navbar-toggler" data-bs-target="#my-nav" data-bs-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Data Barang
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li><a class="dropdown-item" href="/">Halaman Data</a></li>
+                      <li><a class="dropdown-item" href="/add">Tambah Data</a></li>
+                     
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+        </div>
+
+    </nav>
+
+<div class="container">
+    <div class="row">
+       <div class="col-lg-6 mx-auto mt-4">
+        <div class="card shadow">
+            <div class="card-header bg-primary">
+                <h3 class="text-light">Tambah Barang</h3>
+            </div>
+            <div class="car-body p-4">
+                <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="kodebarang">Kode Barang</label>
+                        <input type="text" name="kodebarang" class="form-control form-control-lg" placeholder="Kode Barang" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="namabarang">Nama Barang</label>
+                        <input type="text" name="namabarang" class="form-control form-control-lg" placeholder="Nama Barang" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ukuran">Ukuran</label>
+                        <input type="text" name="ukuran" class="form-control form-control-lg" placeholder="Ukuran" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="harga">Harga</label>
+                        <input type="text" name="harga" class="form-control form-control-lg" placeholder="Harga " required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="kodebarang">Stok </label>
+                        <input type="text" name="stok" class="form-control form-control-lg" placeholder="Stok" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">pilih Gambar</label>
+                        <input type="file" name="image" class="form-control form-control-lg"  required>
+                    </div>
+                    <div class="mb-3 d-grid">
+                        <input type="submit" name="submit" value="Tambahkan" class="btn btn-primary btn-lg">
+                    </div>
+                </form>
+            </div>
+        </div>
+       </div>
+    </div>
+</div>
+<%- include('layout/footer') %>
